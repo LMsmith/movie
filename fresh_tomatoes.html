@@ -8,11 +8,22 @@
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC|Noto+Sans:400,400italic' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        h1 {
+            color: #9147DA;
+            font-family: 'Amatic SC', cursive;
+            padding: 20px;
+            font-size: 40px;
+        }
+        h5 {
+            font-size: 16px;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -33,9 +44,20 @@
             margin-bottom: 20px;
             padding-top: 20px;
         }
-        .movie-tile:hover {
-            background-color: #EEE;
-            cursor: pointer;
+        .movie-tile-overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .movie-tile-overlay:hover {
+            opacity: .9;
+            transition: opacity .5s;
+            background-color: #191919;
+            color: #E6E6E6;
         }
         .scale-media {
             padding-bottom: 56.25%;
@@ -49,6 +71,10 @@
             left: 0;
             top: 0;
             background-color: white;
+        }
+        .summary {
+            padding: 20px;
+            text-align: left;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -106,47 +132,62 @@
       
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="iYw3OtjhK0E" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTM3MDUzMDQwNF5BMl5BanBnXkFtZTcwMDk1NjM4OA@@._V1_SX214_AL_.jpg" width="220" height="342">
-    <h2>Sleepwalk With Me</h2>
+    <div class="movie-tile-overlay">
+        <h1 class="tagline"><strong>"A comedy for anyone who ever had a dream. And then jumped out a window"</strong></h1>
+        <p class="summary">A burgeoning stand-up comedian struggles with the stress of a stalled career, a stale relationship, and the wild spurts of severe sleepwalking he is desperate to ignore.</p>
+        <h5 class="actors"><em>Mike Birbiglia, Lauren Ambrose, James Rebhorn</em></h3>
+    </div>
+    <h2>Sleepwalk With Me,<em> 2012</em></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="GokKUqLcvD8" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_SX214_AL_.jpg" width="220" height="342">
-    <h2>The Dark Knight Rises</h2>
+    <div class="movie-tile-overlay">
+        <h1 class="tagline"><strong>"Rise"</strong></h1>
+        <p class="summary">Eight years after the Joker's reign of anarchy, the Dark Knight is forced to return from his imposed exile to save Gotham City from the brutal guerrilla terrorist Bane with the help of the enigmatic Catwoman.</p>
+        <h5 class="actors"><em>Christian Bale, Tom Hardy, Anne Hathaway</em></h3>
+    </div>
+    <h2>The Dark Knight Rises,<em> 2012</em></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Lj5_FhLaaQQ" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTM2MTI5NzA3MF5BMl5BanBnXkFtZTcwODExNTc0OA@@._V1_SX214_AL_.jpg" width="220" height="342">
-    <h2>Silver Linings Playbook</h2>
+    <div class="movie-tile-overlay">
+        <h1 class="tagline"><strong>"Watch for the signs"</strong></h1>
+        <p class="summary">After a stint in a mental institution, former teacher Pat Solitano moves back in with his parents and tries to reconcile with his ex-wife. Things get more challenging when Pat meets Tiffany, a mysterious girl with problems of her own.</p>
+        <h5 class="actors"><em>Bradley Cooper, Jennifer Lawrence, Robert De Niro</em></h3>
+    </div>
+    <h2>Silver Linings Playbook,<em> 2012</em></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="SUXWAEX2jlg" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMjIwNTYzMzE1M15BMl5BanBnXkFtZTcwOTE5Mzg3OA@@._V1_SX214_AL_.jpg" width="220" height="342">
-    <h2>Fight Club</h2>
+    <div class="movie-tile-overlay">
+        <h1 class="tagline"><strong>"When you wake up in a different place at a different time, can you wake up as a different person?"</strong></h1>
+        <p class="summary">An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more...</p>
+        <h5 class="actors"><em>Brad Pitt, Edward Norton, Helena Bonham Carter</em></h3>
+    </div>
+    <h2>Fight Club,<em> 1999</em></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="9MjV4EwR7Mg" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMzI1MjI5MDQyOV5BMl5BanBnXkFtZTcwNzE4Mjg3NA@@._V1_SX214_AL_.jpg" width="220" height="342">
-    <h2>The Usual Suspects</h2>
+    <div class="movie-tile-overlay">
+        <h1 class="tagline"><strong>"The truth is always in the last place you look"</strong></h1>
+        <p class="summary">A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which begin when five criminals meet at a seemingly random police lineup.</p>
+        <h5 class="actors"><em>Kevin Spacey, Gabriel Byrne, Chazz Palminteri</em></h3>
+    </div>
+    <h2>The Usual Suspects,<em> 1995</em></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="2g0Z7oWMjfo" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTEwNjE2OTM4NDZeQTJeQWpwZ15BbWU3MDE2MTE4OTk@._V1_SX214_AL_.jpg" width="220" height="342">
-    <h2>Short Term 12</h2>
-</div>
-
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="yZGYswlbU8w" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMTg3MTk4NzQ0NV5BMl5BanBnXkFtZTcwNjM0OTc5MQ@@._V1_SY317_CR0,0,214,317_AL_.jpg" width="220" height="342">
-    <h2>Role Models</h2>
-</div>
-
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="S4Ft6C8LTKU" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMzA5NTIwNzUxM15BMl5BanBnXkFtZTcwMTUyNjYyMQ@@._V1_SY317_CR11,0,214,317_AL_.jpg" width="220" height="342">
-    <h2>The Million Dollar Hotel</h2>
-</div>
-
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="yeifMjqpsg0" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMTQ5OTc0NDU1MF5BMl5BanBnXkFtZTYwNzk1OTI3._V1_SY317_CR0,0,214,317_AL_.jpg" width="220" height="342">
-    <h2>Best in Show</h2>
+    <div class="movie-tile-overlay">
+        <h1 class="tagline"><strong>"The lock is broken, but everything else works"</strong></h1>
+        <p class="summary">A 20-something supervising staff member of a residential treatment facility navigates the troubled waters of that world alongside her co-worker and longtime boyfriend.</p>
+        <h5 class="actors"><em>Brie Larson, John Gallagher, Jr., Rami Malek</em></h3>
+    </div>
+    <h2>Short Term 12,<em> 2013</em></h2>
 </div>
 
     </div>

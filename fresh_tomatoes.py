@@ -14,11 +14,22 @@ main_page_head = '''
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC|Noto+Sans:400,400italic' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        h1 {
+            color: #9147DA;
+            font-family: 'Amatic SC', cursive;
+            padding: 20px;
+            font-size: 40px;
+        }
+        h5 {
+            font-size: 16px;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -39,9 +50,20 @@ main_page_head = '''
             margin-bottom: 20px;
             padding-top: 20px;
         }
-        .movie-tile:hover {
-            background-color: #EEE;
-            cursor: pointer;
+        .movie-tile-overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .movie-tile-overlay:hover {
+            opacity: .9;
+            transition: opacity .5s;
+            background-color: #191919;
+            color: #E6E6E6;
         }
         .scale-media {
             padding-bottom: 56.25%;
@@ -55,6 +77,10 @@ main_page_head = '''
             left: 0;
             top: 0;
             background-color: white;
+        }
+        .summary {
+            padding: 20px;
+            text-align: left;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -124,7 +150,12 @@ main_page_content = '''
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+    <div class="movie-tile-overlay">
+        <h1 class="tagline"><strong>"{movie_storyline}"</strong></h1>
+        <p class="summary">{summary}</p>
+        <h5 class="actors"><em>{actors}</em></h3>
+    </div>
+    <h2>{movie_title},<em> {year}</em></h2>
 </div>
 '''
 
@@ -144,8 +175,12 @@ def create_movie_tiles_content(movies):
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
+            year=movie.year,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            movie_storyline=movie.storyline,
+            actors=movie.actors,
+            summary=movie.summary
         )
     return content
 
