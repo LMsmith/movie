@@ -4,6 +4,8 @@ import re
 
 
 # Styles and scripting for the page
+# Added Google fonts Amatic and Noto Sans
+# Added an overlay for the movie tiles
 main_page_head = '''
 <!DOCTYPE html>
 <html lang="en">

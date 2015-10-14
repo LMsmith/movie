@@ -1,8 +1,9 @@
 import webbrowser
 
+# define the Movie class
 class Movie():
-    valid_ratings = ["G", "PG", "PG-13", "R"]
-    
+
+    # Movie has properties for title, storyline, poster image, trailer, release year, actors and summary   
     def __init__(self, movie_title, movie_storyline, poster_image, trailer_youtube, year, actors, summary):
         self.title = movie_title
         self.storyline = movie_storyline
@@ -12,5 +13,6 @@ class Movie():
         self.actors = actors
         self.summary = summary
 
+    # show_trailer function opens the trailer in a modal
     def show_trailer(self):
         webbrowser.open(self.trailer_youtube_url)
